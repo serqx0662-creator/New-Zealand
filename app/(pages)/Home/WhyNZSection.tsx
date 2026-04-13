@@ -8,7 +8,7 @@ export default function WhyNZSection() {
           <h2 className="text-3xl font-semibold text-gray-900">
             Почему Новая Зеландия?
           </h2>
-          <p className="text-black text-base font-normal min-w-[891px] mx-auto leading-relaxed ">
+          <p className="text-black text-base font-normal md:min-w-[891px] mx-auto leading-relaxed overflow-hidden ">
             Современное образование, безопасность и уникальная природа делают Новую Зеландию идеальным выбором.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function WhyNZSection() {
                 долгосрочную карьеру через открытые пути работы после учёбы и миграции.
               </p>
             </div>
-            <div className="mx-0 -mb-8 -mt-19">
+            <div className="mx-0 -mb-8 md:-mt-19">
               <img
                 src="/image/why-nz-people.webp"
                 alt="Студенты"
