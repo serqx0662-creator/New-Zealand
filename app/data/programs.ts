@@ -35,5 +35,32 @@ export const PROGRAMS_DATA: Program[] = [
         price: "От $20,000/год",
         image: "/image/program.png",
         slug: "business-bachelor-3"
+    },
+    {
+        id: 4,
+        title: "Бакалавриат по Бизнесу",
+        university: "Университет Окленда, Новая Зеландия",
+        duration: "3 года",
+        price: "От $20,000/год",
+        image: "/image/program.png",
+        slug: "business-bachelor"
+    },
+    {
+        id: 5,
+        title: "Магистратура",
+        university: "Университет Окленда, Новая Зеландия",
+        duration: "3 года",
+        price: "От $20,000/год",
+        image: "/image/program.png",
+        slug: "business-bachelor-2"
+    },
+    {
+        id: 6,
+        title: "Магистратура",
+        university: "Университет Окленда, Новая Зеландия",
+        duration: "3 года",
+        price: "От $20,000/год",
+        image: "/image/program.png",
+        slug: "business-bachelor-3"
     }
 ];
