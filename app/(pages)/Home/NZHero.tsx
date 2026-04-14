@@ -1,8 +1,9 @@
 import React from 'react';
 import {Button} from "@/app/components/ui/button";
 import {Globe} from "lucide-react";
+import Link from "next/link";
 
-export default function Hero() {
+export default function NZHero() {
     const stats = [
         { label: "Успешных поступлений", value: "10,000+" },
         { label: "Университетов-партнеров", value: "500+" },
@@ -39,12 +40,17 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
-                        <Button size="lg" className="w-full sm:w-auto px-10 h-14 text-base bg-blue-600 hover:bg-blue-700">
-                            Подать заявку
-                        </Button>
-                        <Button size="lg" variant="outline" className="w-full sm:w-auto px-10 h-14 text-base bg-white text-black hover:bg-gray-100 border-none">
-                            Запросить консультацию
-                        </Button>
+                        <Link href="/Apply" className="w-full sm:w-auto">
+                            <Button size="lg" className="w-full px-10 rounded-md h-14 text-base bg-blue-600 hover:bg-blue-700">
+                                Подать заявку
+                            </Button>
+                        </Link>
+
+                        <Link href="/Consultation" className="w-full sm:w-auto">
+                            <Button size="lg" variant="outline" className="w-full rounded-md px-10 h-14 text-base bg-white text-black hover:bg-gray-100 border-none">
+                                Запросить консультацию
+                            </Button>
+                        </Link>
                     </div>
 
                     <div className="w-full">

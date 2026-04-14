@@ -1,4 +1,4 @@
-import Hero from "@/app/(pages)/Home/Hero";
+import NZHero from "@/app/(pages)/Home/NZHero";
 import WhyNZSection from "./WhyNZSection";
 import NZServices from "@/app/(pages)/Home/NZServices";
 import NZPopularPrograms from "@/app/(pages)/Home/NZPopularPrograms";
@@ -6,7 +6,7 @@ import NZPopularPrograms from "@/app/(pages)/Home/NZPopularPrograms";
 export default function Home() {
     return (
         <div className="relative">
-            <Hero />
+            <NZHero />
             <WhyNZSection/>
             <NZServices/>
             <NZPopularPrograms/>
