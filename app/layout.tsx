@@ -19,13 +19,11 @@ export default function RootLayout({
     return (
         <html lang="ru" className={cn("font-sans", inter.variable)} suppressHydrationWarning={true}>
         <body className="antialiased bg-white" suppressHydrationWarning={true}>
-        {/* Header теперь будет на всех страницах автоматически */}
         <Header />
         <main>
             {children}
         </main>
 
-        {/* Здесь позже можно будет добавить Footer */}
         </body>
         </html>
     );

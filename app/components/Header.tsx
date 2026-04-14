@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
-import { Globe, User, Menu, X, LogIn, BookOpen, GraduationCap, Calendar, Users, Clock } from 'lucide-react';
+import { Globe, User, Menu, X, BookOpen, GraduationCap, Calendar, Users, Clock } from 'lucide-react';
 import { Button } from "@/app/components/ui/button";
 import Image from "next/image";
 import {
@@ -18,9 +18,7 @@ export default function Header() {
     const pathname = usePathname();
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => setIsScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -40,74 +38,78 @@ export default function Header() {
 
     return (
         <>
-            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 lg:px-12 flex items-center justify-between bg-white border-b border-gray-100 ${
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-gray-100 ${
                 isScrolled ? "py-3 shadow-md" : "py-5 shadow-sm"
             }`}>
-                <div className="flex items-center">
-                    <Link href="/" className="relative flex items-center h-10 w-32 md:h-12 md:w-40 transition-opacity hover:opacity-90">
-                        <Image
-                            src="/logo/logo-white.svg"
-                            alt="GetGrant"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </Link>
-                </div>
+                <div className="max-w-[1440px] mx-auto px-4 md:px-6 flex items-center justify-between w-full">
 
-                <nav className="hidden xl:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className={`text-sm font-medium transition-colors ${
-                                pathname === link.href ? "text-blue-600" : "text-gray-600 hover:text-[#002B5C]"
-                            }`}
-                        >
-                            {link.name}
+
+                    <div className="flex items-center">
+                        <Link href="/" className="relative flex items-center h-10 md:h-12 w-20 transition-opacity hover:opacity-90">
+                            <Image
+                                src="/logo/logo-white.svg"
+                                alt="GetGrant"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </Link>
-                    ))}
-                </nav>
+                    </div>
 
-                <div className="flex items-center gap-2">
-                    <Button
-                        variant="default"
-                        className="h-10 rounded-md px-6 bg-black hover:bg-black/80 text-white hidden sm:flex transition-all active:scale-95 font-medium"
-                    >
-                        Подать заявку
-                    </Button>
+                    <nav className="hidden xl:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={`text-sm font-medium transition-colors ${
+                                    pathname === link.href ? "text-blue-600" : "text-gray-600 hover:text-[#002B5C]"
+                                }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </nav>
 
-                    <div className="flex items-center gap-2">
-                        <DropdownMenu modal={false}>
-                            <DropdownMenuTrigger asChild>
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="h-10 w-10 text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-colors rounded-md"
-                                >
-                                    <Globe className="h-5 w-5" />
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                                <DropdownMenuItem className="cursor-pointer">Русский</DropdownMenuItem>
-                                <DropdownMenuItem className="cursor-pointer">English</DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-
+                    <div className="flex items-center gap-3">
                         <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-10 w-10 text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-colors rounded-md"
+                            variant="default"
+                            className="h-10 rounded-md px-6 bg-black hover:bg-black/80 text-white hidden sm:flex transition-all active:scale-95 font-medium"
                         >
-                            <User className="h-5 w-5" />
+                            Подать заявку
                         </Button>
 
-                        <button
-                            onClick={() => setIsMobileMenuOpen(true)}
-                            className="xl:hidden h-10 w-10 flex items-center justify-center text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-all rounded-md group"
-                        >
-                            <Menu className="h-6 w-6 transition-transform duration-300 group-hover:scale-110 group-active:rotate-90" />
-                        </button>
+                        <div className="flex items-center gap-2">
+                            <DropdownMenu modal={false}>
+                                <DropdownMenuTrigger asChild>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="h-10 w-10 text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-colors rounded-md"
+                                    >
+                                        <Globe className="h-5 w-5" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuItem className="cursor-pointer">Русский</DropdownMenuItem>
+                                    <DropdownMenuItem className="cursor-pointer">English</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-10 w-10 text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-colors rounded-md"
+                            >
+                                <User className="h-5 w-5" />
+                            </Button>
+
+                            <button
+                                onClick={() => setIsMobileMenuOpen(true)}
+                                className="xl:hidden h-10 w-10 flex items-center justify-center text-gray-600 bg-gray-100/50 hover:bg-gray-200 transition-all rounded-md group"
+                            >
+                                <Menu className="h-6 w-6 transition-transform duration-300 group-hover:scale-110 group-active:rotate-90" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -117,7 +119,6 @@ export default function Header() {
                     className={`absolute inset-0 bg-gray-950/40 backdrop-blur-sm transition-opacity duration-500 ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
-
                 <div className={`absolute top-0 right-0 w-full max-w-sm h-full bg-white shadow-2xl transition-transform duration-500 ease-out p-8 flex flex-col ${
                     isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
                 }`}>
@@ -130,7 +131,6 @@ export default function Header() {
                             <X size={24} />
                         </button>
                     </div>
-
                     <nav className="flex flex-col gap-2 flex-grow overflow-y-auto">
                         {navLinks.map((link, idx) => (
                             <Link
@@ -138,9 +138,7 @@ export default function Header() {
                                 href={link.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={`flex items-center gap-4 p-4 rounded-xl text-lg font-medium transition-all ${
-                                    pathname === link.href
-                                        ? "bg-blue-50 text-blue-600"
-                                        : "text-gray-600 hover:bg-gray-50"
+                                    pathname === link.href ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
                                 }`}
                                 style={{
                                     transitionDelay: `${idx * 40}ms`,
@@ -149,14 +147,11 @@ export default function Header() {
                                     transitionProperty: 'all'
                                 }}
                             >
-                                <span className={pathname === link.href ? "text-blue-600" : "text-gray-400"}>
-                                    {link.icon}
-                                </span>
+                                <span className={pathname === link.href ? "text-blue-600" : "text-gray-400"}>{link.icon}</span>
                                 {link.name}
                             </Link>
                         ))}
                     </nav>
-
                     <div className="mt-auto pt-6 border-t border-gray-100 space-y-3">
                         <Button className="w-full bg-black py-6 text-white text-base font-medium rounded-xl transition-transform active:scale-95">
                             Подать заявку
