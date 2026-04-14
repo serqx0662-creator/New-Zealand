@@ -153,7 +153,7 @@ export default function Header() {
                         ))}
                     </nav>
                     <div className="mt-auto pt-6 border-t border-gray-100 space-y-3">
-                        <Button className="w-full bg-black py-6 text-white text-base font-medium rounded-xl transition-transform active:scale-95">
+                        <Button className="w-full bg-black py-6 text-white text-base font-medium rounded-md transition-transform active:scale-95">
                             Подать заявку
                         </Button>
                     </div>

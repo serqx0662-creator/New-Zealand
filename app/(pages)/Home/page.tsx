@@ -2,6 +2,7 @@ import Header from "@/app/components/Header";
 import Hero from "@/app/(pages)/Home/Hero";
 import WhyNZSection from "./WhyNZSection";
 import NZServices from "@/app/(pages)/Home/NZServices";
+import NZPopularPrograms from "@/app/(pages)/Home/NZPopularPrograms";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                 <Hero />
                 <WhyNZSection/>
                 <NZServices/>
+                <NZPopularPrograms/>
 -            </main>
         </div>
     );
