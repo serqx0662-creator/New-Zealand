@@ -11,6 +11,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/app/components/ui/dropdown-menu";
+import {cn} from "@/lib/utils";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -71,12 +72,14 @@ export default function Header() {
                     </nav>
 
                     <div className="flex items-center gap-3">
-                        <Button
-                            variant="default"
-                            className="h-10 rounded-md px-6 bg-black hover:bg-black/80 text-white hidden sm:flex transition-all active:scale-95 font-medium"
+                        <Link
+                            href="/Apply"
+                            className={cn(
+                                "h-10 rounded-md px-6 bg-black hover:bg-black/80 text-white hidden sm:flex items-center justify-center transition-all active:scale-95 font-medium text-sm"
+                            )}
                         >
                             Подать заявку
-                        </Button>
+                        </Link>
 
                         <div className="flex items-center gap-2">
                             <DropdownMenu modal={false}>

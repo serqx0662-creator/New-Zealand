@@ -63,13 +63,13 @@ export default function PopularPrograms() {
 
                                 <div className="grid grid-cols-2 gap-4 mt-auto">
                                     <Link
-                                        href={`/programs/${program.slug}`}
+                                        href={`/Programs/${program.slug}`}
                                         className="flex items-center justify-center border border-gray-200 text-gray-700 font-semibold py-3 rounded-md hover:bg-gray-50 transition-colors"
                                     >
                                         Подробнее
                                     </Link>
                                     <Link
-                                        href="/apply"
+                                        href="/Apply"
                                         className="flex items-center justify-center bg-black text-white font-semibold py-3 rounded-md hover:bg-black/80 transition-all"
                                     >
                                         Подать заявку
