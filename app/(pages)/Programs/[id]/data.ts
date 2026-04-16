@@ -6,7 +6,7 @@ export interface ProgramContent {
     totalPrice: string;
     campus: string;
     howToApply: string[];
-    faq: { question: string; answer: string }[]; // <--- добавить
+    faq: { question: string; answer: string }[];
 }
 
 export interface Program {

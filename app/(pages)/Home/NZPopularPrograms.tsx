@@ -19,7 +19,7 @@ export default function PopularPrograms() {
                         </p>
                     </div>
                     <Link
-                        href="/programs"
+                        href="/Programs"
                         className="bg-black text-white hover:bg-black/90 px-6 py-3 rounded-md font-medium transition-colors text-center"
                     >
                         Все программы
