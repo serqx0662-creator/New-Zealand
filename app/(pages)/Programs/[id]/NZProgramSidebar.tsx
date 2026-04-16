@@ -23,7 +23,7 @@ export const NZProgramSidebar = ({ duration, startDate, price, rating }: Sidebar
             </div>
 
             <div className="flex flex-col gap-3">
-                <Link href="/Apply" className={cn("w-full h-14 rounded-md px-6 bg-black hover:bg-black/80 text-white hidden sm:flex items-center justify-center transition-all active:scale-95 font-medium text-sm")}>
+                <Link href="/Apply" className={cn("w-full h-14 rounded-md px-6 bg-black hover:bg-black/80 text-white flex items-center justify-center transition-all active:scale-95 font-medium text-sm")}>
                     Подать заявку
                 </Link>
                 <Button variant="outline" className="w-full h-14 rounded-md border-gray-300 gap-2 hover:bg-gray-50 transition-all">
@@ -38,9 +38,11 @@ export const NZProgramSidebar = ({ duration, startDate, price, rating }: Sidebar
         <div className="bg-black text-white rounded-[14px] p-8">
             <h3 className="text-xl font-bold mb-3">Нужна помощь?</h3>
             <p className="text-gray-400 text-sm mb-6 font-medium">Наши консультанты помогут вам выбрать подходящую программу</p>
-            <Button className="w-full bg-white text-black h-12 rounded-md font-bold hover:bg-gray-100 transition-all active:scale-95">
-                Запросить консультацию
-            </Button>
+            <Link href="/Consultation">
+                <Button className="w-full bg-white text-black h-12 rounded-md font-bold hover:bg-gray-100 transition-all active:scale-95">
+                    Запросить консультацию
+                </Button>
+            </Link>
         </div>
     </aside>
 );
