@@ -36,7 +36,7 @@ export default function Page({ params }: PageProps) {
 
     return (
         <main className="bg-white min-h-screen pt-32 pb-20">
-            <div className="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div className="max-w-[1440px] mx-auto px-6">
 
                 <Button
                     variant="outline"
