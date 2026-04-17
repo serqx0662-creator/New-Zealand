@@ -98,11 +98,14 @@ export const NZContactForm = () => {
                     )}
                 </div>
 
-                <div className="flex items-start space-x-3">
-                    <Checkbox id="privacy" onCheckedChange={(c) => setValue("privacy", c as boolean, { shouldValidate: true })} />
-                    <Label htmlFor="privacy" className="text-sm text-[#7F838D] font-normal leading-tight cursor-pointer">
-                        Я согласен с политикой конфиденциальности
-                    </Label>
+                <div className="space-y-2">
+                    <div className="flex items-start space-x-3">
+                        <Checkbox id="privacy" onCheckedChange={(c) => setValue("privacy", c as boolean, { shouldValidate: true })} />
+                        <Label htmlFor="privacy" className="text-sm text-[#7F838D] font-normal leading-tight cursor-pointer">
+                            Я согласен с политикой конфиденциальности
+                        </Label>
+                    </div>
+                    {errors.privacy && <p className="text-red-500 text-xs mt-1 ml-1">{errors.privacy.message}</p>}
                 </div>
 
                 <Button type="submit" className="bg-black text-white px-8 py-6 rounded-md font-bold">
