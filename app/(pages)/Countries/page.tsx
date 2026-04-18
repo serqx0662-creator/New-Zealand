@@ -7,7 +7,7 @@ export default function CountriesPage() {
     return (
         <section className="flex flex-col gap-15 pt-40 pb-20 mx-auto px-4 md:px-6">
             <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">
+                <h1 className="text-[48px] font-bold text-gray-900 mb-2">
                     Страны для обучения
                 </h1>
                 <p className="text-gray-500 text-base">
