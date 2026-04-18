@@ -47,7 +47,7 @@ export default function UniversityCard({ university }: UniversityCardProps) {
             </div>
           </div>
 
-          <div className="w-full border border-zinc-200 rounded-xl py-2.5 text-sm font-medium text-zinc-700 text-center group-hover:bg-zinc-900 group-hover:text-white group-hover:border-zinc-900 transition-all duration-200">
+          <div className="relative z-20 block w-full py-3 border border-gray-200 rounded-md text-center font-bold hover:bg-gray-100 transition-all active:scale-[0.98] bg-white">
             Посмотреть программу
           </div>
         </div>
